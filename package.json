@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "JavaScript development environment Pluralsight course by Cory House",
   "scripts": {
-    "start" : "npm-run-all --parallel open:src lint:watch test:watch start-mockapi localtunnel",
+    "start" : "npm-run-all --parallel open:src lint:watch test:watch start-mockapi",
     "prestart": "babel-node buildScripts/startMessage.js",
     "open:src": "babel-node buildScripts/srcServer.js",
     "localtunnel": "lt --port 3000",
