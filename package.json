@@ -14,7 +14,11 @@
     "test:watch": "npm run test -- --watch",
     "generate-mock-data": "babel-node buildScripts/generateMockData.js",
     "start-mockapi": "json-server --watch src/api/db.json --port 3001",
-    "prestart-mockapi": "npm run generate-mock-data"
+    "prestart-mockapi": "npm run generate-mock-data",
+    "clean-dist": "rimraf ./dist && mkdir dist",
+    "prebuild": "npm-run-all clean-dist test lint",
+    "postbuild": "babel-node buildScripts/distServer.js",
+    "build": "babel-node buildScripts/build.js"
   },
   "author": "Akram Moussaoui",
   "license": "MIT",
